@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --color1: #0065FC;
+  --color2: #DEEBFF;
+  --color3: #F2F2F2;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", "Sans serif";
+}
+
+
+
+
+.header {
+  display: flex; /* permet marge:auto  ou space between */
+  margin: 0 auto;
+  padding: 0 50px;
+  max-width: 1340px;
+
+  position: relative;
+
+}
+
+.logo {
+  height: 2.8125rem;
+  margin-right: auto;
+  align-self: center;
+}
+
+.header div {
+  display: inline-block;
+}
+
+.header a {
+  display: inline-block;
+    /*
+  si inline : le padding et border n'entrent pas dans le cacul de la hauteur du conteneur, et le line-height n'est pas pris en compte pour le border. Donc il faudrait utilser le padding et le line-height, difficile d'ajuster le deux car font-size est appromixmatif.
+
+  si inline-block : le line-height est pris en compte comme limite exterieure imposée au conteneur et pour placer le border.
+
+  donc on utilise ici inline-block.
+  */
+  line-height: 8.125rem;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  font-weight: 500;
+  color: var(--color1);
+  text-decoration: none;
+
+  /* vertical-align: baseline; */
+}
+
+.header div a:nth-child(1)  {
+  border-top: 2px solid var(--color1);
+}
+
+.header div a:nth-child(2)  {
+  --border-top: 2px solid transparent;
+}
+
+.header div a:nth-child(2):hover {
+  border-top: 2px solid var(--color1);
+}
+
+
+.header nav > a {
+  font-weight: 700;
+  padding-left: 1.5rem;
+  padding-right: 0;
+}
+
+
+
+.main {
+
+  margin: -0.3125rem auto 0 auto;
+  padding: 0 50px;
+  max-width: 1340px;
+
+  background-color: lightgreen;
+}
+
+.main > header {
+  background-color: pink;
+}
+
+h1  {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+
+h2 {
+  
+}
+
+
+
+
+
+footer  {
+  height: 200px;
+  background-color: tomato;
+
+}
+
+footer div  {
+  display: block;
+  background-color: lightgreen;
+  margin-top: 210px;
+}
+
+
+footer p {
+
+  background-color: skyblue;
+  
+}
+
+@media screen and (max-width: 1440px) {
+  .header, .main {
+    padding: 0 calc(20px + (100% - 768px) / (1440 - 768) * 30);
+  } 
+}
+
+@media screen and (max-width:768px) {
+  .header {
+    margin-bottom: calc(3rem + 6px);
+  }
+
+  .header, .main {
+    padding: 0 20px;
+  }
+
+  .header nav > a {
+    line-height: 5rem;
+  }
+
+  .header div {
+    --display: flex;
+    width: 100%;
+    --justify-content: stretch;
+
+    left: 0px;
+    top: 5rem;
+    position: absolute;
+    background-color: skyblue;
+    
+  }
+
+  .header div a {
+    display: inline-block;
+    width: 50%;
+    padding: 0px;
+    text-align: center;
+    line-height: 3rem;
+    border-top: none;
+  }
+  
+  .header div a:nth-child(1)  {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid var(--color1);
+    background-color: red;
+  }
+
+  .header div a:nth-child(2)  {
+    
+    /* vertical-align: baseline; */
+  }
+
+  .header div a:nth-child(2):hover {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid var(--color1);
+  }
+
+  .main {
+    margin-top: 0px;
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
