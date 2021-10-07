@@ -117,8 +117,8 @@ h2 {
   width: 14.625rem;
   padding-left: 1rem;
   border: 1px solid var(--color3);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
 
 }
 
@@ -137,8 +137,8 @@ h2 {
   color: white;
   padding-left: 1rem;
   padding-right: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 
@@ -146,6 +146,55 @@ h2 {
 .main header form button i {
   display: none;
 }
+
+.main .filter {
+  background-color: tomato;
+  margin-top: 1.9375rem;
+
+  display: flex;
+}
+
+.main .filter h1 {
+  background-color: skyblue;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.main .filter ul {
+  display: flex;
+}
+
+.main .filter ul li {
+  display: flex;
+  border: 2px solid var(--color3);
+  justify-content: center;
+  align-items: center;
+}
+
+.main .filter ul li:nth-child(1) div {
+  display: flex;
+  background-color: var(--color2);
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .filter ul li:nth-child(1) div img {
+  content: url(images/icons/money-bill-wave-solid.svg);
+  color: var(--color1);
+  width: 2rem;
+  height: 2rem;
+  background-color: green;
+}
+
+
+/*.filter ul li:nth-child(1)::marker {
+  font-size: 3rem;
+}
+*/
+
+
 
 
 @media screen and (max-width: 1440px) {
