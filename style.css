@@ -148,65 +148,74 @@ h2 {
 }
 
 .main .filter {
-  background-color: tomato;
+
   margin-top: 1.9375rem;
 
   display: flex;
+  flex-wrap: wrap;
+
 }
 
 .main .filter h1 {
   background-color: skyblue;
   font-size: 1.1rem;
   font-weight: 700;
+  align-self: center;
 }
 
-.main .filter ul {
+ul {
   display: flex;
+  flex-wrap: wrap;
+  list-style: none; /* Remove default bullets */
 }
 
-.main .filter ul li {
-  display: flex;
-  border: 2px solid var(--color3);
-  justify-content: center;
-  align-items: center;
+li {
+  
+  line-height: 3rem;
+  padding-left: calc(1rem + 2px + 1rem + 1rem + 2px + 1rem); /* left/right padding: 1rem, 2px de bordure, icon width 1rem */
+  padding-right: 1rem;
+  border: 2px solid #D9D9D9;
+  border-radius: calc(1.5rem + 2px);
+
+  position: relative;
+  margin-right: 2rem;
+
+  margin-bottom: 1rem;
 }
 
-.main .filter ul li:nth-child(1) div {
-  display: flex;
-  background-color: var(--color2);
-  width: 6rem;
-  height: 3rem;
-  justify-content: center;
-  align-items: center;
+.main ul li::before {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #DEEBFF;
+  padding-top: calc(1rem);
+  --padding-right: calc(1rem);
+  padding-right: 1rem;
+  padding-left: calc(1rem);
+  padding-bottom: calc(1rem);
+  border: 2px solid #DEEBFF;
+  border-radius: 50%;
+  position: absolute;
+  top:-2px;
+  left:-2px;
 }
 
-.main .filter ul li:nth-child(1) div img {
-  content: url(images/icons/money-bill-wave-solid.svg);
-  color: var(--color1);
-  width: 2rem;
-  height: 2rem;
-  background-color: green;
+.main ul li:nth-child(1)::before {
+  content: url(images/icons/heart.svg);
 }
 
-.main .filter ul li:nth-child(1) div i {
-  width: 2rem;
-  height: 2rem;
-  background-color: pink;
+.main ul li:nth-child(2)::before {
+  content: url(images/icons/heart.svg);
 }
 
-.main .filter ul li:nth-child(1) div i::before {
-  content: url(images/icons/money-bill-wave-solid.svg);
-  color: var(--color1);
-
-  --background-color: green;
+.main ul li:nth-child(3)::before {
+  content: url(images/icons/heart.svg);
 }
-/*.filter ul li:nth-child(1)::marker {
-  font-size: 3rem;
+
+.main ul li:nth-child(4)::before {
+  content: url(images/icons/heart.svg);
 }
-*/
-
-
-
 
 @media screen and (max-width: 1440px) {
   .header, .main {
