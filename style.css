@@ -61,8 +61,8 @@ body {
 }
 
 .header nav > a {
+  padding-right: 0px;
   font-weight: 700;
-  padding-right: 1.6875rem;
 
 }
 
@@ -102,9 +102,6 @@ h2 {
   border-radius: 1rem 0 0 1rem;
   height: 3.1875rem;
   width: 3.1875rem;
-
-
-  
 }
 
 .main header form div i {
@@ -148,12 +145,9 @@ h2 {
 }
 
 .main .filter {
-
   margin-top: 1.9375rem;
-
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .main .filter h1 {
@@ -167,33 +161,35 @@ ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none; /* Remove default bullets */
+
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 li {
   
-  line-height: 3rem;
-  padding-left: calc(1rem + 2px + 1rem + 1rem + 2px + 1rem); /* left/right padding: 1rem, 2px de bordure, icon width 1rem */
+  line-height: 2.875rem; /* 3rem */
+  padding-left: calc(2px + 2.875rem + 2px); /* 2px border + circle 2.875rem + 2px border*/
   padding-right: 1rem;
   border: 2px solid #D9D9D9;
-  border-radius: calc(1.5rem + 2px);
+  border-radius: calc(2.875rem / 2 + 2px);
 
   position: relative;
   margin-right: 2rem;
 
-  margin-bottom: 1rem;
+  --margin-bottom: 1rem;
 }
 
 .main ul li::before {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  line-height: 1rem;
+  width: 1.1rem; /*1rem*/
+  height: 1.1rem; /*1rem*/
+  line-height: 1.1rem; /*1rem*/
   background-color: #DEEBFF;
-  padding-top: calc(1rem);
-  --padding-right: calc(1rem);
-  padding-right: 1rem;
-  padding-left: calc(1rem);
-  padding-bottom: calc(1rem);
+  padding-top: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
+  padding-right: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
+  padding-left: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
+  padding-bottom: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
   border: 2px solid #DEEBFF;
   border-radius: 50%;
   position: absolute;
@@ -202,11 +198,11 @@ li {
 }
 
 .main ul li:nth-child(1)::before {
-  content: url(images/icons/heart.svg);
+  content: url(images/icons/money.svg);
 }
 
 .main ul li:nth-child(2)::before {
-  content: url(images/icons/heart.svg);
+  content: url(images/icons/family.svg);
 }
 
 .main ul li:nth-child(3)::before {
@@ -214,7 +210,7 @@ li {
 }
 
 .main ul li:nth-child(4)::before {
-  content: url(images/icons/heart.svg);
+  content: url(images/icons/dog.svg);
 }
 
 @media screen and (max-width: 1440px) {
@@ -288,12 +284,12 @@ li {
     display: inline;
   }
 
+  .main .filter {
+    margin-top: 2.3125rem;
+  }
 
  
 }
-
-
-
 
 
 
