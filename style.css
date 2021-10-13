@@ -111,9 +111,12 @@ h2 {
 
 .main header form input {
   flex-shrink: 1;
-  width: 14.625rem;
+  width: 13.625rem;
   padding-left: 1rem;
-  border: 1px solid var(--color3);
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid var(--color3);
+  border-bottom: 1px solid var(--color3);
   font-size: 1.1rem;
   font-weight: 700;
 
@@ -146,38 +149,47 @@ h2 {
 
 .main .filter {
   margin-top: 1.9375rem;
+  
   display: flex;
   flex-wrap: wrap;
 }
 
 .main .filter h1 {
-  background-color: skyblue;
   font-size: 1.1rem;
   font-weight: 700;
   align-self: center;
+
+  margin-right: 2rem;
+
+  margin-top: calc(0.8125rem / 2);
+  margin-bottom: calc(0.8125rem / 2);
 }
 
 ul {
+
   display: flex;
   flex-wrap: wrap;
   list-style: none; /* Remove default bullets */
 
   font-size: 1.1rem;
   font-weight: 700;
+
+  padding-inline-start: 0;
+
 }
 
-li {
-  
+li { 
   line-height: 2.875rem; /* 3rem */
   padding-left: calc(2px + 2.875rem + 2px); /* 2px border + circle 2.875rem + 2px border*/
   padding-right: 1rem;
   border: 2px solid #D9D9D9;
   border-radius: calc(2.875rem / 2 + 2px);
-
   position: relative;
-  margin-right: 2rem;
+  
+  margin-right: 1.5rem;
 
-  --margin-bottom: 1rem;
+  margin-top: calc(0.8125rem / 2);
+  margin-bottom: calc(0.8125rem / 2);
 }
 
 .main ul li::before {
@@ -186,10 +198,7 @@ li {
   height: 1.1rem; /*1rem*/
   line-height: 1.1rem; /*1rem*/
   background-color: #DEEBFF;
-  padding-top: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
-  padding-right: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
-  padding-left: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
-  padding-bottom: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
+  padding: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
   border: 2px solid #DEEBFF;
   border-radius: 50%;
   position: absolute;
@@ -290,13 +299,5 @@ li {
 
  
 }
-
-
-
-
-
-
-
-
 
 
