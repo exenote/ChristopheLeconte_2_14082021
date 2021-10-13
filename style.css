@@ -148,7 +148,7 @@ h2 {
 }
 
 .main .filter {
-  margin-top: 1.9375rem;
+  margin-top: calc(1.9375rem - 0.8125rem / 2);
   
   display: flex;
   flex-wrap: wrap;
@@ -294,7 +294,7 @@ li {
   }
 
   .main .filter {
-    margin-top: 2.3125rem;
+    margin-top: calc(2.3125rem - 0.8125rem / 2);
   }
 
  
