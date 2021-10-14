@@ -165,7 +165,7 @@ h2 {
   margin-bottom: calc(0.8125rem / 2);
 }
 
-ul {
+.main ul {
 
   display: flex;
   flex-wrap: wrap;
@@ -178,7 +178,7 @@ ul {
 
 }
 
-li { 
+.main li { 
   line-height: 2.875rem; /* 3rem */
   padding-left: calc(2px + 2.875rem + 2px); /* 2px border + circle 2.875rem + 2px border*/
   padding-right: 1rem;
@@ -194,14 +194,14 @@ li {
 
 .main ul li::before {
   display: inline-block;
-  width: 1.1rem; /*1rem*/
-  height: 1.1rem; /*1rem*/
-  line-height: 1.1rem; /*1rem*/
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
   background-color: #DEEBFF;
-  padding: calc(1.775rem / 2); /* 2.875rem - 1.1rem largeur de l'icone */
+  padding: calc(1.775rem / 2); /* 1.775rem = 2.875rem - 1.1rem largeur de l'icone */
   border: 2px solid #DEEBFF;
   border-radius: 50%;
-  position: absolute;
+  position: absolute; /* pour placer l'élément sur les borders du parent */
   top:-2px;
   left:-2px;
 }
@@ -221,6 +221,43 @@ li {
 .main ul li:nth-child(4)::before {
   content: url(images/icons/dog.svg);
 }
+
+.main p {
+  font-size: 1rem;
+  line-height: calc(1.5rem + 2px);
+  padding-left: calc(2.25rem + 2px); /* 1px + 1px + padding (0.75 / 2) * 2 + width: 0.75rem  + distance entre icon et texte */
+  margin-top: 1.9375rem;
+  position: relative;  
+}
+
+.main p::before {
+  display: inline-block;
+  content: url(images/icons/info.svg);
+  height: 0.75rem;
+  width: 0.75rem;
+  line-height: 0.75rem;
+  padding: calc(0.75rem / 2); /* (line-height:1.5 - width,height:0.75) / 2 */
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  position: absolute; /* permet un padding avec le texte */
+  top: 0px;
+  left: 0px;
+}
+
+.accommodations {
+  border-radius: 20px;
+  background-color: var(--color3);
+  margin-top: 2.3125rem;
+  padding: 2.5rem;
+
+  height: 500px;
+}
+
+.accommodations h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 
 @media screen and (max-width: 1440px) {
   .header, .main {
