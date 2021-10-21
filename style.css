@@ -326,24 +326,37 @@ h2 {
   background-color: skyblue;
   border: 1px solid blue;
   flex-wrap: wrap;
-
+  flex-grow: 1;
+  --flex-shrink: 1;
   gap: 10px;
 }
 
 .t1-1-1 {
   background-color: pink;
+
+  flex-grow: 1;
 }
 
 .t1-1-2  {
   background-color: tomato;
+  flex-grow: 1;
 }
 
 .t1-2 {
   background-color: lightgreen;
   border: 1px solid green;
 
-  
+  display: flex;
+  flex-wrap: wrap;
 
+
+  
+}
+
+
+.t1-2-1 {
+  background-color: lightgrey;
+  border: 1px solid black;
 }
 
 
@@ -357,7 +370,7 @@ h2 {
   }
 
   .accommodations .themostpopular {
-    min-width: calc(100% - 2 * 2.5rem);
+    width: calc(100% - 2 * 2.5rem);
   }
 
   .accommodations .all {
