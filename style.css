@@ -245,27 +245,134 @@ h2 {
 }
 
 .accommodations {
+  background-color: pink;
+  width: 100%;
+  margin-top: 2.3125rem;
+
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.accommodations .all {
   border-radius: 20px;
   background-color: var(--color3);
-  margin-top: 2.3125rem;
   padding: 2.5rem;
 
-  height: 500px;
 }
 
-.accommodations h1 {
-  font-size: 1.5rem;
+.accommodations .all h1 {
+  font-size: 1.333rem;
   font-weight: 700;
 }
+
+.accommodations .themostpopular {
+  border-radius: 20px;
+  background-color: var(--color3);
+
+  padding: 2.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15%; /*à ajuster*/
+  
+}
+
+.accommodations .themostpopular h1 {
+  font-size: 1.333rem;
+  font-weight: 700;
+  color: blue;
+}
+
+.accommodations .themostpopular article {
+
+
+}
+
+.accommodations .themostpopular article img {
+  width: 40%;
+  height: 100%;
+
+}
+
+.accommodations .themostpopular article div {
+  
+}
+
+
+
+
+
+.t1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+  background-color: lightgrey;
+  border: 1px solid red;
+  margin: 20px;
+  justify-content: flex-start;
+  gap: 10px;
+
+  font-size: 3rem;
+
+  padding: 50px;
+  
+}
+
+.t1-1 {
+  display: flex;
+  background-color: skyblue;
+  border: 1px solid blue;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.t1-1-1 {
+  background-color: pink;
+}
+
+.t1-1-2  {
+  background-color: tomato;
+}
+
+.t1-2 {
+  background-color: lightgreen;
+  border: 1px solid green;
+
+  
+
+}
+
+
+
+
 
 
 @media screen and (max-width: 1440px) {
   .header, .main {
     padding: 0 calc(20px + (100% - 768px) / (1440 - 768) * 30);
-  } 
+  }
+
+  .accommodations .themostpopular {
+    min-width: calc(100% - 2 * 2.5rem);
+  }
+
+  .accommodations .all {
+    min-width: calc(100% - 2 * 2.5rem);
+  }
+
 }
 
 @media screen and (max-width:768px) {
+  .t1-2 {
+    min-width: calc(100% - 2px);
+
+  }
+
+
   .header {
     margin-bottom: calc(2.8125rem + 3px - 0.5625rem); /* <div> en absolute + 3px border de <a> - marge negative de <div>*/
   }
@@ -334,6 +441,8 @@ h2 {
     margin-top: calc(2.3125rem - 0.8125rem / 2);
   }
 
+  /*ajuster le mini-width de "les plus populaires"*/
+  
  
 }
 
