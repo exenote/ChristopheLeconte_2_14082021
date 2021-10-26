@@ -17,7 +17,36 @@ body {
 .header {
   display: flex; /* permet marge:auto  ou space between */
   margin: 0 auto;
-  padding: 0 50px;
+  /*padding: 0 50px;*/
+  padding: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px));
+
+/*padding: 0 
+calc( 20px + 
+      min(
+              max(
+                    100% - 768px,
+                    ((100% - 768px) * (-1) + 100% - 768px) / 2 
+                  )
+                  / (1440 - 768) * 30,
+              30px
+          )
+    )
+
+
+calc( 20px + min( max( 100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30))
+
+
+-----max(var(--a), -1*var(--a))
+
+((abs(100% - 768px) + 100% - 768px) / 2) :
+= 0 si (100% - 768px) est inférieur ou égal à 0
+
+min(calc(20px + ((abs(100% - 768px) + 100% - 768px) / 2) / (1440 - 768) * 30), 50px)
+
+calc(20px + ((abs(100% - 768px) + 100% - 768px) / 2) / (1440 - 768) * 30)
+calc(20px + ((max(100% - 768px, (100% - 768px) * (-1)) + 100% - 768px) / 2) / (1440 - 768) * 30)
+
+*/
   max-width: 1340px;
   position: relative;
 }
@@ -68,7 +97,8 @@ body {
 
 .main {
   margin: -0.3125rem auto 0 auto;
-  padding: 0 50px;
+  /*padding: 0 50px;*/
+  padding: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px));
   max-width: 1340px;
 
 }
@@ -362,12 +392,167 @@ h2 {
 
 
 
+.t2 {
+  display: flex;
+  --flex-direction: column;
+  flex-direction: row-reverse;
+  gap: 10px;
+  --align-content: stretch;
+  --align-items: flex-start;
+  flex-wrap: wrap;
 
+  background-color: lightgrey;
+  border: 1px solid black;
+
+  width: 200px;
+  height: 200px;
+}
+
+.t2-1 {
+  /*essayer les hypothèses*/
+  --width: auto;
+  width: 100%;
+  --width: 50px;
+  --min-width:;
+  --width: 100px;
+  --height: 50px;
+  --flex-grow: 1;
+
+  background-color: pink;
+  border: 1px solid red;
+
+
+}
+
+.t2-2 {
+  background-color: lightgreen;
+  border: 1px solid green;
+
+  flex-grow: 1;
+}
+
+.t3 {
+  background-color: lightblue;
+  border: 1px solid blue;
+  display: flex;
+
+  height: 200px;
+
+  align-items: center;
+}
+
+.t3-1 {
+  background-color: lightgreen;
+  border: 1px solid green;
+
+
+}
+
+
+.t4 {
+  background-color: lightgrey;
+
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+
+}
+
+
+.t4-1 {
+  background-color: pink;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 900px;
+
+}
+
+.t4-1-1 {
+  background-color: lightgreen;
+
+  flex-grow: 1;
+  --flex-shrink: 0;
+  min-width: 200px;  /*il faut supprimer le min with quand version mobile*/
+  width: 33%;
+  --width: 300px; /* ne permet pas la reduction*/
+  ----flex-basis: 33%;
+  --flex-basis: 300px;
+
+}
+
+
+.t4-2 {
+  background-color: skyblue;
+
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.grey {
+  background-color: lightgrey;
+}
+
+
+.t5 {
+
+  background-color: lightgrey;
+
+  display: flex;
+  max-width: 600px;
+  flex-wrap: wrap;
+
+
+}
+
+.t5-1 {
+  display: flex;
+  flex-wrap: wrap;
+
+  background-color: pink;
+
+  --width: 400px;
+  width: 400px;
+  flex-grow: 1;
+}
+
+.t5-1-1 {
+  background-color: lightgreen;
+  min-width: 100px;
+
+  flex-grow: 1;
+
+  width: 33%;
+
+}
+
+.t5-2 {
+  flex-shrink: 0;
+  width: 200px;
+
+
+  background-color: lightblue;
+
+}
+
+.gold {
+  background-color: gold;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .t5-2 {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 1440px) {
-  .header, .main {
+/*  .header, .main {
     padding: 0 calc(20px + (100% - 768px) / (1440 - 768) * 30);
-  }
+  }*/
 
   .accommodations .themostpopular {
     width: calc(100% - 2 * 2.5rem);
@@ -375,6 +560,11 @@ h2 {
 
   .accommodations .all {
     min-width: calc(100% - 2 * 2.5rem);
+  }
+
+  .t4-2 {
+    
+    width: 100%;
   }
 
 }
@@ -386,12 +576,14 @@ h2 {
   }
 
 
+
+
   .header {
     margin-bottom: calc(2.8125rem + 3px - 0.5625rem); /* <div> en absolute + 3px border de <a> - marge negative de <div>*/
   }
 
   .header, .main {
-    padding: 0 20px;
+    /*padding: 0 20px;*/
   }
 
   .header nav > a {
