@@ -21,7 +21,7 @@ body {
   ----padding: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2);
 
   max-width: 1340px;
-  position: relative;
+  --position: relative;
 }
 
 
@@ -112,6 +112,7 @@ calc( 20px + min( max( 100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 
   margin: -0.3125rem calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2) 0;
   /*padding: 0 50px;*/
   ----padding: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px));
+
   max-width: 1340px;
 
 }
@@ -569,6 +570,7 @@ h2 {
 
   .accommodations .themostpopular {
     width: calc(100% - 2 * 2.5rem);
+
   }
 
   .accommodations .all {
