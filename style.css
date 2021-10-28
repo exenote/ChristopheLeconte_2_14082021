@@ -6,6 +6,10 @@
   --color3: #F2F2F2; /* grey */
 }
 
+html {
+  font-size: 16px;
+}
+
 * {
   margin: 0;
 }
@@ -15,13 +19,9 @@ body {
 }
 
 .header {
-  display: flex; /* permet marge:auto  ou space between */
+  display: flex; /* permet marge:auto pour les children  ou space between */
   margin: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2);
-  /*padding: 0 50px;*/
-  ----padding: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2);
-
   max-width: 1340px;
-  --position: relative;
 }
 
 
@@ -110,11 +110,7 @@ calc( 20px + min( max( 100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 
 
 .main {
   margin: -0.3125rem calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2) 0;
-  /*padding: 0 50px;*/
-  ----padding: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px));
-
   max-width: 1340px;
-
 }
 
 h1  {
@@ -289,9 +285,11 @@ h2 {
 }
 
 .accommodations {
+  margin-top: 2.3125rem;
+
   background-color: pink;
   width: 100%;
-  margin-top: 2.3125rem;
+  
 
   display: flex;
   flex-direction: row-reverse;
@@ -300,9 +298,11 @@ h2 {
 }
 
 .accommodations .all {
+  padding: 2.5rem;
+
   border-radius: 20px;
   background-color: var(--color3);
-  padding: 2.5rem;
+  
 
 }
 
@@ -312,10 +312,12 @@ h2 {
 }
 
 .accommodations .themostpopular {
+  padding: 2.5rem;
+
   border-radius: 20px;
   background-color: var(--color3);
 
-  padding: 2.5rem;
+  
 
   display: flex;
   flex-wrap: wrap;
@@ -489,7 +491,7 @@ h2 {
 
   flex-grow: 1;
   --flex-shrink: 0;
-  min-width: 200px;  /*il faut supprimer le min with quand version mobile*/
+  min-width: 200px;  /*il faut supprimer le min with quand version mobile avec calc*/
   width: 33%;
   --width: 300px; /* ne permet pas la reduction*/
   ----flex-basis: 33%;
@@ -501,8 +503,9 @@ h2 {
 .t4-2 {
   background-color: skyblue;
 
-  flex-shrink: 0;
+  ----flex-shrink: 0;
   width: 300px;
+  flex-grow: 1;
 }
 
 .grey {
@@ -543,9 +546,10 @@ h2 {
 }
 
 .t5-2 {
-  flex-shrink: 0;
+  --flex-shrink: 0;
   width: 200px;
 
+  flex-grow: 1; /* */
 
   background-color: lightblue;
 
@@ -559,7 +563,7 @@ h2 {
 
 @media screen and (max-width: 800px) {
   .t5-2 {
-    width: 100%;
+    ---width: 100%;
   }
 }
 
@@ -579,7 +583,7 @@ h2 {
 
   .t4-2 {
     
-    width: 100%;
+    ----width: 100%;
   }
 
 }
@@ -607,9 +611,10 @@ h2 {
 
   .header div {
     width: 100%;
-    left: 0px;
-    top: 5.8125rem; /* new */
     position: absolute;
+    left: 0px;
+    top: 5.8125rem;
+    
     margin-top: -0.5625rem; /* répartition supérieure de line-height tronquée */ 
   }
 
