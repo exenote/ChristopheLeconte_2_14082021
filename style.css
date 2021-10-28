@@ -494,7 +494,7 @@ h2 {
   min-width: 200px;  /*il faut supprimer le min with quand version mobile avec calc*/
   width: 33%;
   --width: 300px; /* ne permet pas la reduction*/
-  ----flex-basis: 33%;
+  --flex-basis: 33%;
   --flex-basis: 300px;
 
 }
@@ -561,12 +561,6 @@ h2 {
 
 
 
-@media screen and (max-width: 800px) {
-  .t5-2 {
-    ---width: 100%;
-  }
-}
-
 @media screen and (max-width: 1440px) {
 /*  .header, .main {
     padding: 0 calc(20px + (100% - 768px) / (1440 - 768) * 30);
@@ -581,10 +575,7 @@ h2 {
     min-width: calc(100% - 2 * 2.5rem);
   }
 
-  .t4-2 {
-    
-    ----width: 100%;
-  }
+
 
 }
 
