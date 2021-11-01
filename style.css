@@ -19,7 +19,7 @@ body {
 }
 
 .header {
-  display: flex; /* permet marge:auto pour les children  ou space between */
+  display: flex; /* permet marge:auto pour les enfants  ou space between */
   margin: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2);
   max-width: 1340px;
 }
@@ -518,8 +518,10 @@ h2 {
   background-color: lightgrey;
 
   display: flex;
-  max-width: 600px;
+  max-width: 1200px; /* 600 */
   flex-wrap: wrap;
+  padding: 37px;
+  gap: 37px;
 
 
 }
@@ -530,24 +532,26 @@ h2 {
 
   background-color: pink;
 
-  --width: 400px;
-  width: 400px;
+  width: 800px; /* on doit mettre une limite ici, sinon cet item va s'étendre sur toute la ligne et forcer le deuxième item à aller à ligne, car dans ce cas le width de t5-1 est calculé ainsi : 6 * t5-1-1 min-width: 100px = 600px
+  */
   flex-grow: 1;
+
+  gap: 37px;
 }
 
 .t5-1-1 {
   background-color: lightgreen;
-  min-width: 100px;
+  min-width: min(244px, 100%);
 
   flex-grow: 1;
-
-  width: 33%;
-
+ 
+  width: calc((100% - 2 * 37px) / 3);  /*il ne pourra y avoir que 3 items maximum par row  */
+  /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne*/
 }
 
 .t5-2 {
   --flex-shrink: 0;
-  width: 200px;
+  width: calc(400px - 37px);;
 
   flex-grow: 1; /* */
 
@@ -560,6 +564,31 @@ h2 {
 }
 
 
+.t6 {
+  display: flex;
+  width: 600px;
+
+  background-color: lightgrey;
+  border: 1px solid black;
+  flex-wrap: wrap;
+
+  align-content: stretch;
+  align-items: stretch;
+  
+  height: 107px;
+}
+
+.gap {
+  gap: 10px;
+}
+
+.t6-1 {
+  background-color: lightgreen;
+}
+
+.gold {
+  background-color: gold;
+}
 
 @media screen and (max-width: 1440px) {
 /*  .header, .main {
