@@ -262,7 +262,7 @@ h2 {
   content: url(images/icons/dog.svg);
 }
 
-.main p {
+.main .availability {
   font-size: 1rem;
   line-height: calc(1.5rem + 2px);
   padding-left: calc(2.25rem + 2px); /* 1px + 1px + padding (0.75 / 2) * 2 + width: 0.75rem  + distance entre icon et texte */
@@ -270,7 +270,7 @@ h2 {
   position: relative;  
 }
 
-.main p::before {
+.main .availability::before {
   display: inline-block;
   content: url(images/icons/info.svg);
   height: 0.75rem;
@@ -320,7 +320,7 @@ h2 {
 
 .card {
   ----display: block;
-  background-color: lightgreen;
+  background-color: var(--color3);
  
   min-width: calc(min(246px, 100%) - 10px); /* padding 2*5px*/
   flex-grow: 1;
@@ -330,7 +330,9 @@ h2 {
 
   border-radius: 20px;
 
-  padding: 5px;
+  padding: 5px 5px 11px 5px;
+  text-decoration: none;
+  color: black;
 }
 
 .card img {
@@ -340,6 +342,19 @@ h2 {
   height: 114px;
   object-fit: cover;
 
+}
+
+.card h3 {
+  margin-left: 11px;
+  font-weight: 700;
+}
+
+.card .price {
+  margin-left: 11px;
+}
+
+.card .price span {
+  font-weight: bold;
 }
 
 .mostpopular {
