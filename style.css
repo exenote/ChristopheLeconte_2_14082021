@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --color1: #0065FC;
@@ -284,21 +284,9 @@ h2 {
   left: 0px;
 }
 
-.accommodations {
-  margin-top: 2.3125rem;
-
-  background-color: pink;
-  width: 100%;
-  
-
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
 
 .accommodations .all {
-  padding: 2.5rem;
+
 
   border-radius: 20px;
   background-color: var(--color3);
@@ -312,17 +300,8 @@ h2 {
 }
 
 .accommodations .themostpopular {
-  padding: 2.5rem;
-
   border-radius: 20px;
   background-color: var(--color3);
-
-  
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15%; /*à ajuster*/
-  
 }
 
 .accommodations .themostpopular h1 {
@@ -346,212 +325,59 @@ h2 {
   
 }
 
-
-
-
-
-.t1 {
-  display: flex;
-  flex-wrap: wrap;
+.accommodations {
+  margin-top: 2.3125rem;
   flex-direction: row-reverse;
-
   background-color: lightgrey;
-  border: 1px solid red;
-  margin: 20px;
-  justify-content: flex-start;
-  gap: 10px;
 
-  font-size: 3rem;
-
-  padding: 50px;
+  display: flex;
+  max-width: 1340px; /* 600 */
   
-}
-
-.t1-1 {
-  display: flex;
-  background-color: skyblue;
-  border: 1px solid blue;
   flex-wrap: wrap;
-  flex-grow: 1;
-  --flex-shrink: 1;
-  gap: 10px;
-}
-
-.t1-1-1 {
-  background-color: pink;
-
-  flex-grow: 1;
-}
-
-.t1-1-2  {
-  background-color: tomato;
-  flex-grow: 1;
-}
-
-.t1-2 {
-  background-color: lightgreen;
-  border: 1px solid green;
-
-  display: flex;
-  flex-wrap: wrap;
-
-
   
+  gap: 40px;
+
+
 }
 
-
-.t1-2-1 {
-  background-color: lightgrey;
-  border: 1px solid black;
-}
-
-
-
-
-.t2 {
+.all {
   display: flex;
-  --flex-direction: column;
-  flex-direction: row-reverse;
-  gap: 10px;
-  --align-content: stretch;
-  --align-items: flex-start;
-  flex-wrap: wrap;
-
-  background-color: lightgrey;
-  border: 1px solid black;
-
-  width: 200px;
-  height: 200px;
-}
-
-.t2-1 {
-  /*essayer les hypothèses*/
-  --width: auto;
-  width: 100%;
-  --width: 50px;
-  --min-width:;
-  --width: 100px;
-  --height: 50px;
-  --flex-grow: 1;
-
-  background-color: pink;
-  border: 1px solid red;
-
-
-}
-
-.t2-2 {
-  background-color: lightgreen;
-  border: 1px solid green;
-
-  flex-grow: 1;
-}
-
-.t3 {
-  background-color: lightblue;
-  border: 1px solid blue;
-  display: flex;
-
-  height: 200px;
-
-  align-items: center;
-}
-
-.t3-1 {
-  background-color: lightgreen;
-  border: 1px solid green;
-
-
-}
-
-
-.t4 {
-  background-color: lightgrey;
-
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-
-}
-
-
-.t4-1 {
-  background-color: pink;
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 900px;
-
-}
-
-.t4-1-1 {
-  background-color: lightgreen;
-
-  flex-grow: 1;
-  --flex-shrink: 0;
-  min-width: 200px;  /*il faut supprimer le min with quand version mobile avec calc*/
-  width: 33%;
-  --width: 300px; /* ne permet pas la reduction*/
-  --flex-basis: 33%;
-  --flex-basis: 300px;
-
-}
-
-
-.t4-2 {
-  background-color: skyblue;
-
-  ----flex-shrink: 0;
-  width: 300px;
-  flex-grow: 1;
-}
-
-.grey {
-  background-color: lightgrey;
-}
-
-
-.t5 {
-
-  background-color: lightgrey;
-
-  display: flex;
-  max-width: 1200px; /* 600 */
-  flex-wrap: wrap;
-  padding: 37px;
-  gap: 37px;
-
-
-}
-
-.t5-1 {
-  display: flex;
-  flex-wrap: wrap;
-
-  background-color: pink;
-
+  flex-direction: column;
   width: 800px; /* on doit mettre une limite ici, sinon cet item va s'étendre sur toute la ligne et forcer le deuxième item à aller à ligne, car dans ce cas le width de t5-1 est calculé ainsi : 6 * t5-1-1 min-width: 100px = 600px
   */
   flex-grow: 1;
-
-  gap: 37px;
 }
 
-.t5-1-1 {
-  background-color: lightgreen;
-  min-width: min(244px, 100%);
+.all > div {
+  display: flex;
 
+  flex-wrap: wrap;
+
+  background-color: pink;
+
+
+
+  
+  gap: 31px;
+
+  padding: 40px; /* enlever 20px quand <= 768px */ 
+}
+
+.card {
+  background-color: lightgreen;
+ 
+  min-width: min(246px, 100%);
   flex-grow: 1;
  
-  width: calc((100% - 2 * 37px) / 3);  /*il ne pourra y avoir que 3 items maximum par row  */
-  /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne*/
+  width: calc((100% - 2 * 31px) / 3);  /*il ne pourra y avoir que 3 items maximum par row  */
+  /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
+
+
 }
 
-.t5-2 {
-  --flex-shrink: 0;
-  width: calc(400px - 37px);;
+.mostpopular {
+
+  width: 420px;
 
   flex-grow: 1; /* */
 
@@ -564,65 +390,16 @@ h2 {
 }
 
 
-.t6 {
-  display: flex;
-  width: 600px;
 
-  background-color: lightgrey;
-  border: 1px solid black;
-  flex-wrap: wrap;
-
-  align-content: stretch;
-  align-items: stretch;
-  
-  height: 107px;
-}
-
-.gap {
-  gap: 10px;
-}
-
-.t6-1 {
-  background-color: lightgreen;
-}
-
-.gold {
-  background-color: gold;
-}
 
 @media screen and (max-width: 1440px) {
-/*  .header, .main {
-    padding: 0 calc(20px + (100% - 768px) / (1440 - 768) * 30);
-  }*/
-
-  .accommodations .themostpopular {
-    width: calc(100% - 2 * 2.5rem);
-
-  }
-
-  .accommodations .all {
-    min-width: calc(100% - 2 * 2.5rem);
-  }
-
 
 
 }
 
 @media screen and (max-width:768px) {
-  .t1-2 {
-    min-width: calc(100% - 2px);
-
-  }
-
-
-
-
   .header {
     margin-bottom: calc(2.8125rem + 3px - 0.5625rem); /* <div> en absolute + 3px border de <a> - marge negative de <div>*/
-  }
-
-  .header, .main {
-    /*padding: 0 20px;*/
   }
 
   .header nav > a {
@@ -687,7 +464,12 @@ h2 {
   }
 
   /*ajuster le mini-width de "les plus populaires"*/
-  
+
+  .accommodations {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+  }
  
 }
 
