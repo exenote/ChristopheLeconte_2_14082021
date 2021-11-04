@@ -99,7 +99,12 @@ calc( 20px + min( max( 100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 
   /* border sur les autres links inutiles, car vertical-align sur baseline. */
 }
 
+.header div a:nth-child(2) {
+  color: black;
+}
+
 .header div a:nth-child(2):hover {
+  color: var(--color1);
   border-top: 2px solid var(--color1);
 }
 
