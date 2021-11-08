@@ -454,14 +454,14 @@ h2 {
   background-color: lightgreen;
   display: flex;
   flex-wrap: wrap;
-  --flex-grow: 1;
-  flex-shrink: 1;
   gap: 37px;
 }
 
 .t2-1 {
   background-color: skyblue;
   padding: 5px;
+  flex-grow: 1;
+
 
   --z: calc(1094px - 100%);
   --z1: calc(var(--z) * 1000000);
