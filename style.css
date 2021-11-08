@@ -26,19 +26,8 @@ body {
 }
 
 
-/*padding: 0 
-calc( 20px + 
-      min(
-              max(
-                    100% - 768px,
-                    ((100% - 768px) * (-1) + 100% - 768px) / 2 
-                  )
-                  / (1440 - 768) * 30,
-              30px
-          )
-    )
-
-
+/* 
+-----------------------------
 calc( 20px
       + 
       min(
@@ -52,16 +41,27 @@ calc( 20px
       +
       (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2)
     )
-
-+
-      (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2)
-
+-------------------------------
       (max( x * (-1), x ) + x) / 2 / 2)
-
-
-
-calc( 20px + min( max( 100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30))
-
+-------------------------------
+calc( 20px
+      + 
+      min(
+              ( max(
+                    100% - 768px,
+                    (100% - 768px) * (-1)
+                  )
+                +
+                ( 100% - 768px)
+              )
+              / 2   
+              / (1440 - 768) * 30
+            ,
+              30px
+          )
+      +
+      (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2)
+    )
 
 */
 
@@ -299,6 +299,35 @@ h2 {
   gap: 40px;
 }
 
+.mostpopular {
+  border-radius: 20px;
+  background-color: var(--color3);
+  width: 340px;
+
+  flex-grow: 1; /* */
+  padding: 40px;
+
+
+}
+
+.mostpopular .mostpopularsection {
+  --display: flex;
+  gap: 31px;
+}
+
+.mostpopular .card {
+  
+  ----width: calc(min( max( -45px * -1, -45px) - (max( -45px * -1, -45px) + -45px) / 2 , 1) * 100px);
+
+  ----width: calc(min( max( -45 * -1, -45) - (max( -45 * -1, -45) + -45) / 2 , 1) * 100%);
+
+  width: calc(min( 50px, 100px) * 3);
+  background-color: skyblue; 
+
+
+
+}
+
 .all {
   border-radius: 20px;
   background-color: var(--color3);
@@ -328,7 +357,7 @@ h2 {
   ----display: block;
   background-color: white;
  
-  min-width: calc(min(246px, 100%) - 10px); /* padding 2*5px*/
+  min-width: calc(min(246px, 100%) - 10px); /*force le passage à la ligne suivante*/
   flex-grow: 1;
  
   width: calc(((100% - 2 * 31px) / 3) - 10px);  /*il ne pourra y avoir que 3 items maximum par row  */
@@ -408,13 +437,72 @@ h2 {
   padding-bottom: 44px;
 }
 
-.mostpopular {
-  border-radius: 20px;
-  background-color: var(--color3);
-  width: 340px;
 
-  flex-grow: 1; /* */
-  padding: 40px;
+
+.t1 {
+  --pwi : calc(100% + (1000000 + 1) * 1px / 1000000);
+  --wi: calc(var(--pwi) / 2);
+
+  height: 50px;
+  background-color: tomato;
+
+  width: calc(var(--wi));
+
+}
+
+.t2 {
+  background-color: lightgreen;
+  display: flex;
+  flex-wrap: wrap;
+  --flex-grow: 1;
+  flex-shrink: 1;
+  gap: 37px;
+}
+
+.t2-1 {
+  background-color: skyblue;
+  padding: 5px;
+
+  --z: calc(1094px - 100%);
+  --z1: calc(var(--z) * 1000000);
+  --z2: calc(max( var(--z1) * (-1), var(--z1))); /* abs */
+  --z3: calc((var(--z2) + var(--z1)) / 2);
+  --z4: calc(min(var(--z3), 1px));
+
+  --y: calc(1094px - 100%);
+  --y1: calc(var(--y) * 1000000);
+  --y2: calc(min( max( var(--y1) * (-1), var(--y1)) - (max( var(--y1) * (-1), var(--y1)) + var(--y1)) / 2 , 1px ));
+
+  --x: calc(1094px - 100%);
+  --x1: calc(max( var(--x) * -1, var(--x)));
+  --x2: calc(var(--x1) * 1000000 * (-1));
+  --x3: calc(min( max( var(--x2) * (-1), var(--x2)) - (max( var(--x2) * (-1), var(--x2)) + var(--x2)) / 2 , 1px));
+  --x4: calc(var(--x3) * (-1) + 1px);
+
+  width: calc(var(--z4) * 1340 + var(--y2) * 330 + var(--x4) * 330);
+  /*shrink : 1 agira sur le cas var(--z4) * 1340*/
+
+
+/*  -------------width: calc(100% - var(--y2) * (37 + 340) * 2 - var(--x4) * (37 + 340) * 2);
+  width: calc(100% - var(--y2) * ((100% - (2 * 37px)) * 2 / 3 - 2 * 5px) - var(--x4) * ((100% - (2 * 37px)) * 2 / 3 - 2 * 5px);
+  ----width: calc(var(--y2) * (37 + 340) * 2);
+  ----width: calc(var(--x4) * (37 + 340) * 2);
+*/
+
+/* 
+  -----width: calc(min(100%, max(100% / 3, 330px)));
+  -----width: calc(max(100% / 3, max(330px, 100%)));
+  width: calc(max (max(330px , 100%), 100% / 3));
+
+*/
+/*
+        max(330px, 100% / 3)
+
+        max(min(330px, 100%) , 100% / 3)
+
+        width: max(330px   , 100% / 3)
+        
+*/
 }
 
 
@@ -494,9 +582,12 @@ h2 {
   /*ajuster le mini-width de "les plus populaires"*/
 
   .accommodations {
-    position: absolute;
+/*  position: absolute;
     left: 0px;
-    width: 100%;
+    width: 100%;*/
+    margin-left: -20px;
+    margin-right: -20px;
+
   }
 
   .all {
@@ -529,6 +620,8 @@ h2 {
   .mostpopular {
     border-radius: 0px;
   }
+
+
   
 }
 
