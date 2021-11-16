@@ -434,8 +434,6 @@ h2 {
 .all {
   border-radius: 20px;
   background-color: var(--color3);
-  ----display: flex;
-  ----flex-direction: column;
   width: 880px; /* on doit mettre une limite ici, sinon cet item va s'étendre sur toute la ligne et forcer le deuxième item à aller à ligne, car dans ce cas le width de t5-1 est calculé ainsi : 6 * t5-1-1 min-width: 100px = 600px
   */
   flex-grow: 1;
@@ -460,9 +458,11 @@ h2 {
   background-color: white;
  
   min-width: calc(min(246px, 100%) - 10px); /*force le passage à la ligne suivante*/
-  flex-grow: 1; 
+   
   width: calc(((100% - 2 * 31px) / 3) - 10px);  /*il ne pourra y avoir que 3 items maximum par row  */
   /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
+  flex-grow: 1;
+
 
   border-radius: 20px;
 
@@ -532,12 +532,19 @@ h2 {
   font-size: 18px;
   font-weight: 700;
   padding-left: 40px;
-  padding-bottom: 44px;
+  padding-top: 2px;
+  padding-bottom: 45px;
 }
 
 .activities {
+  margin-top: 52px;
 
+}
 
+.activities h2 {
+  font-size: 1.333rem;
+  font-weight: 700;
+  margin-bottom: 22px;
 }
 
 .activitiesall {
@@ -548,50 +555,51 @@ h2 {
 }
 
 .activitiessection {
-  background-color: green;
+
   display: flex;
   flex-wrap: wrap;
   width: 650px;
   gap: 40px;
   flex-grow: 1;
+  flex-shrink: 1;
 
 }
 
 .activitiessectiongroup {
   display: flex;
   flex-wrap: wrap;
-  width: 305px;
+  width: min(305px, 100%);/* 305px */
   gap: 40px;
   flex-grow: 1;
+  flex-shrink: 1;
 
-}
-
-.red {
-  background-color: red;
-}
-
-.pink {
-  background-color: pink;
 }
 
 .activitiescard {
-  width: 305px;
+  width: min(305px, 100%); /* 305px*/
   flex-grow: 1;
-  background-color: blue;
+  box-shadow: 0px -7px 10px 0px rgb(0 0 0 / 3%), -1px 9px 10px rgb(0 0 0 / 6%);
+  border-radius: 15px;
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+  
+
+.activitiescard:hover {
+  transform: scale(1.02);
 }
 
 .activitiescardpic {
   background-size: cover;
-
-  background-color: tomato;
   width: 100%;
   
-
   background-position: center;
 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
 
 .activitiescardpic1 {
   background-image: url(images/activities/small/1.jpg);
@@ -607,16 +615,28 @@ h2 {
 }
 .activitiescardpic4 {
   background-image: url(images/activities/small/4.jpg);
+  height: 390px;
 }
 .activitiescardpic5 {
   background-image: url(images/activities/small/5.jpg);
+  height: 140px;
 }
 .activitiescardpic6 {
   background-image: url(images/activities/small/6.jpg);
+  height: 155px;
 }
 
 .activitiescardtext {
-  line-height: 55px;
+  margin-top: 4px;
+  line-height: 51px;
+  font-weight: 700;
+  margin-left: 19px;
+}
+
+@media screen and (max-width:689px) {
+  .activitiescardpic {
+    height: 134px;
+  }
 }
 
 
