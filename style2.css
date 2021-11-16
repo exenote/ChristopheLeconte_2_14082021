@@ -539,6 +539,7 @@ h2 {
 .activities {
   margin-top: 52px;
 
+
 }
 
 .activities h2 {
@@ -627,10 +628,9 @@ h2 {
 }
 
 .activitiescardtext {
-  margin-top: 4px;
-  line-height: 51px;
+  padding-top: 20px;
   font-weight: 700;
-  margin-left: 19px;
+  padding-bottom: 16px;
 }
 
 @media screen and (max-width:689px) {
