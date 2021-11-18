@@ -21,8 +21,8 @@ body {
 
 .header {
   display: flex; /* permet marge:auto pour les enfants  ou space between */
-  margin: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2) / (1440 - 768) * 30, 30px) + (max((100% - 1440px) * (-1), (100% - 1440px)) + (100% - 1440px)) / 2 / 2);
-  --max-width: 1340px;
+  margin: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2 ) / (1440 - 768) * 30, 30px) + (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2);
+  max-width: 1340px;
 }
 
 
@@ -118,12 +118,12 @@ calc( 20px
   max-width: 1340px;
 }
 
-.main header h2  {
+h1  {
   font-size: 1.375rem;
   font-weight: 700;
 }
 
-.main header h3 {
+h2 {
   font-size: 1rem;
   font-weight: 500;
   margin-top: 0.5rem;
@@ -196,7 +196,7 @@ calc( 20px
   flex-wrap: wrap;
 }
 
-.main .filter h2 {
+.main .filter h1 {
   font-size: 1.1rem;
   font-weight: 700;
   align-self: center;
@@ -210,7 +210,7 @@ calc( 20px
 .main ul {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
+  list-style: none; /* Remove default bullets */
 
   font-size: 1.1rem;
   font-weight: 700;
@@ -309,7 +309,7 @@ calc( 20px
   align-items: baseline;
 }
 
-.mostpopular h2 {
+.mostpopular h1 {
   font-size: 1.333rem;
   font-weight: 700;
 }
@@ -326,17 +326,27 @@ calc( 20px
 /*------------------------------------------------------------------------------------*/
   flex-grow: 1;
 /*------------------------------------------------------------------------------------*/
-  /* 1082px = 330px[card width] * 3 + (5px * 2) [card padding] * 3 + 31px *2 [gap] */
-  --x: calc(1082px - 100%);
-  --p_1_0: calc(min((max(var(--x) * (-1), var(--x)) + var(--x)) / 2 * 10, 1px));
-  --n_1_0: calc(min((max(var(--x) * (-1), var(--x)) - var(--x)) / 2 * 10, 1px));
-  --0_1_0: calc(min(max(var(--x) * (-1), var(--x)) * 10, 1px) * (-1) + 1px);
-  width: calc(var(--p_1_0) * 1082 + var(--n_1_0) * 330 + var(--0_1_0) * 330);
-  /* si 1082, shrink ajustera le width. 1 item par ligne.
-  si 330, 3 elements sur la ligne
-  */
+  --z: 1082px - 100%;
+  --z1: var(--z) * 1; /*1000000*/
+  --z2: max( var(--z1) * (-1), var(--z1)); /* abs */
+  --z3: calc((var(--z2) + var(--z1)) / 2);
+  --z4: min(var(--z3), 1px);
+
+  --y: 1082px - 100%;
+  --y1: var(--y) * 1;/*1000000*/
+  --y2: min( max( var(--y1) * (-1), var(--y1)) - (max( var(--y1) * (-1), var(--y1)) + var(--y1)) / 2 , 1px );
+
+  --x: 1082px - 100%;
+  --x1: max( var(--x) * (-1), var(--x));
+  --x2: calc(var(--x1) * 1 * (-1));/*1000000*/
+  --x3: min( max( var(--x2) * (-1), var(--x2)) - (max( var(--x2) * (-1), var(--x2)) + var(--x2)) / 2 , 1px);
+  --x4: calc(var(--x3) * (-1) + 1px);
+/*------------------------------------------------------------------------------------*/
+  width: calc(var(--z4) * 1082 + var(--y2) * 330 + var(--x4) * 330); 
 
 /*------------------------------------------------------------------------------------*/
+
+
   display: flex;
   gap: 21px;
   border-radius : 21px;
@@ -353,7 +363,7 @@ calc( 20px
   background-size: cover;
 
   width: calc((100% - 21px) * 127/(330 - 21));
-  --flex-grow: 1;
+  flex-grow: 1;
 
 
   background-position: center;
@@ -437,13 +447,15 @@ calc( 20px
 .all {
   border-radius: 20px;
   background-color: var(--color3);
+  ----display: flex;
+  ----flex-direction: column;
   width: 880px; /* on doit mettre une limite ici, sinon cet item va s'étendre sur toute la ligne et forcer le deuxième item à aller à ligne, car dans ce cas le width de t5-1 est calculé ainsi : 6 * t5-1-1 min-width: 100px = 600px
   */
   flex-grow: 1;
   padding-top: 42px;
 }
 
-.all h2 {
+.all h1 {
   font-size: 1.333rem;
   font-weight: 700;
   padding: 0px 40px;
@@ -461,11 +473,9 @@ calc( 20px
   background-color: white;
  
   min-width: calc(min(246px, 100%) - 10px); /*force le passage à la ligne suivante*/
-   
+  flex-grow: 1; 
   width: calc(((100% - 2 * 31px) / 3) - 10px);  /*il ne pourra y avoir que 3 items maximum par row  */
   /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
-  flex-grow: 1;
-
 
   border-radius: 20px;
 
@@ -475,7 +485,6 @@ calc( 20px
   box-shadow: 0px -7px 10px 0px rgb(0 0 0 / 3%), -1px 9px 10px rgb(0 0 0 / 6%);
 
   font-size: 0px;
-  cursor: pointer;
 
   transition-duration: 0.1s;
 }
@@ -484,7 +493,7 @@ calc( 20px
   transform: scale(1.02);
 }
 
-.all .cardimg {
+.all .card img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   width: 100%;
@@ -515,11 +524,7 @@ calc( 20px
   margin-left: 11px;
 }
 
-.all .card .star {
-  margin-right: 2px;  
-}
-
-/*.all .card .starblue {
+.all .card .starblue {
   width: 12px;
   height: 12px;
   content: url(images/icons/starblue.svg);
@@ -531,7 +536,7 @@ calc( 20px
   height: 12px;
   content: url(images/icons/stargrey.svg);
   margin-right: 2px;
-}*/
+}
 
 .all .more {
   background: none;
@@ -540,167 +545,12 @@ calc( 20px
   font-size: 18px;
   font-weight: 700;
   padding-left: 40px;
-  padding-top: 2px;
-  padding-bottom: 45px;
-}
-
-.activities {
-  margin-top: 52px;
-
-
-}
-
-.activities h2 {
-  font-size: 1.333rem;
-  font-weight: 700;
-  margin-bottom: 22px;
-}
-
-.activitiesall {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  flex-grow: 1;
-}
-
-.activitiessection {
-
-  display: flex;
-  flex-wrap: wrap;
-  width: 650px;
-  gap: 40px;
-  flex-grow: 1;
-  flex-shrink: 1;
-
-}
-
-.activitiessectiongroup {
-  display: flex;
-  flex-wrap: wrap;
-  width: min(305px, 100%);
-  gap: 40px;
-  flex-grow: 1;
-  flex-shrink: 1;
-
-}
-
-.activitiescard {
-  width: min(305px, 100%);
-  flex-grow: 1;
-  box-shadow: 0px -7px 10px 0px rgb(0 0 0 / 3%), -1px 9px 10px rgb(0 0 0 / 6%);
-  border-radius: 15px;
-  transition-duration: 0.1s;
-  cursor: pointer;
-}
-
-  
-
-.activitiescard:hover {
-  transform: scale(1.02);
-}
-
-.activitiescardpic {
-  background-size: cover;
-  width: 100%;
-  
-  background-position: center;
-
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-
-.activitiescardpic1 {
-  background-image: url(images/activities/small/1.jpg);
-  height: 390px;
-}
-.activitiescardpic2 {
-  background-image: url(images/activities/small/2.jpg);
-  height: 180px;
-}
-.activitiescardpic3 {
-  background-image: url(images/activities/small/3.jpg);
-  height: 115px;
-}
-.activitiescardpic4 {
-  background-image: url(images/activities/small/4.jpg);
-  height: 390px;
-}
-.activitiescardpic5 {
-  background-image: url(images/activities/small/5.jpg);
-  height: 140px;
-}
-.activitiescardpic6 {
-  background-image: url(images/activities/small/6.jpg);
-  height: 155px;
-}
-
-.activitiescardtext {
-  --padding-top: 20px;
-  padding: 20px 0px 16px 20px;
-  font-weight: 700;
-  --padding-bottom: 16px;
+  padding-bottom: 44px;
 }
 
 
 
 
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px 0px 0px;
-  padding: 0px calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2) / (1440 - 768) * 30, 30px) + (max((100% - 1440px) * (-1), (100% - 1440px)) + (100% - 1440px)) / 2 / 2) 50px;
- 
-  background-color: var(--color3);
-
-}
-
-.footer h3 {
-  margin-top: 30px;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 46px;  
-}
-
-.footersection {
-  /* 1000px = 1000/3 * 3 items */
-  --x: calc(1000px - 100%);
-  --p_1_0: calc(min((max(var(--x) * (-1), var(--x)) + var(--x)) / 2 * 10, 1px));
-  --n_1_0: calc(min((max(var(--x) * (-1), var(--x)) - var(--x)) / 2 * 10, 1px));
-  --0_1_0: calc(min(max(var(--x) * (-1), var(--x)) * 10, 1px) * (-1) + 1px);
-  width: calc(var(--p_1_0) * 1000 + var(--n_1_0) * 1000 / 3 + var(--0_1_0) * 1000 / 3);
-  /* si 1000, shrink ajustera le width. 1 item par ligne.
-  si 1000 / 3, 3 elements sur la ligne
-  */
-  flex-grow: 1;
-
-
-}
-
-.footersection ul {
-  list-style: none;
-  padding-inline-start: 0; 
-}
-
-.footersection li {
-  font-weight: 500;
-  line-height: 31px;
-
-}
-
-
- /*force le passage à la ligne suivante*/
-   
-  /*il ne pourra y avoir que 3 items maximum par row  */
-  /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
-
-
-@media screen and (max-width:689px) {
-  /* 690 = 305 + 305 + 20 * 2 (marges) + 40 (gap) */
-  .activitiescardpic {
-    height: 134px;
-  }
-}
 
 
 @media screen and (max-width:768px) {
