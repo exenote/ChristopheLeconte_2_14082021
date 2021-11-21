@@ -1,4 +1,4 @@
- @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --color1: #0065FC;
@@ -327,14 +327,25 @@ calc( 20px
   flex-grow: 1;
 /*------------------------------------------------------------------------------------*/
   /* 1082px = 330px[card width] * 3 + (5px * 2) [card padding] * 3 + 31px *2 [gap] */
-  --x: calc(1082px - 100%);
+  /*
+  x: calc(1082px - 100%);
+  width: calc(var(--p_1_0) * 1082 + var(--n_1_0) * 330 + var(--0_1_0) * 330);
+  */
+  /* si 1082, shrink ajustera le width. 1 item par ligne.
+  si 330, 3 elements sur la ligne
+   */
+  
+  /* 842px = 250px[card width] * 3 + (5px * 2) [card padding] * 3 + 31px *2 [gap] */
+  --x: calc(842px - 100%);
   --p_1_0: calc(min((max(var(--x) * (-1), var(--x)) + var(--x)) / 2 * 10, 1px));
   --n_1_0: calc(min((max(var(--x) * (-1), var(--x)) - var(--x)) / 2 * 10, 1px));
   --0_1_0: calc(min(max(var(--x) * (-1), var(--x)) * 10, 1px) * (-1) + 1px);
-  width: calc(var(--p_1_0) * 1082 + var(--n_1_0) * 330 + var(--0_1_0) * 330);
-  /* si 1082, shrink ajustera le width. 1 item par ligne.
-  si 330, 3 elements sur la ligne
-  */
+  width: calc(var(--p_1_0) * 842 + var(--n_1_0) * 250 + var(--0_1_0) * 250);
+  /* si --p_1_0, shrink ajustera le width (842) des child. 1 item par ligne.
+  si --n_1_0, 3 elements sur la ligne (width 250) + flex-grow: 1
+  si --0_1_0, 3 elements sur la ligne (width 250)
+   */
+ 
 
 /*------------------------------------------------------------------------------------*/
   display: flex;
@@ -695,12 +706,7 @@ calc( 20px
   /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
 
 
-@media screen and (max-width:689px) {
-  /* 690 = 305 + 305 + 20 * 2 (marges) + 40 (gap) */
-  .activitiescardpic {
-    height: 134px;
-  }
-}
+
 
 
 @media screen and (max-width:768px) {
@@ -779,7 +785,6 @@ calc( 20px
     width: 100%;*/
     margin-left: -20px;
     margin-right: -20px;
-
   }
 
   .all {
@@ -787,26 +792,23 @@ calc( 20px
     background-color: white;
   }
 
-
   .all > div {
     padding-top: 20px;  /* <=768: 22 ; 20*/
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 31px;
+
+    gap: 11px; /*  */
   }
 
-  .all h1 {
+  .all h2 {
     padding-left: 20px;
     padding-right: 20px;
   }
 
   .all .more {
     padding-left: 20px;
-    background-color: lightgreen;
-  }
-
-  .all .card {
-
+    padding-bottom: 0px;
   }
 
   .mostpopular {
@@ -815,8 +817,27 @@ calc( 20px
     padding-right: 20px;
   }
 
+  .mostpopularsection {
+    gap: 11px;
+  }
 
-  
+  .activitiesall {
+    gap: 11px;
+  }
+
+  .activitiessection {
+    gap: 11px;
+  }
+
+  .activitiessectiongroup {
+    gap: 22px;
+  }
+
 }
 
-
+@media screen and (max-width:689px) {
+  /* 690 = 305 + 305 + 20 * 2 (marges) + 40 (gap) */
+  .activitiescardpic {
+    height: 134px;
+  }
+}
