@@ -345,7 +345,6 @@ calc( 20px
   si --n_1_0, 3 elements sur la ligne (width 250) + flex-grow: 1
   si --0_1_0, 3 elements sur la ligne (width 250)
    */
- 
 
 /*------------------------------------------------------------------------------------*/
   display: flex;
@@ -395,7 +394,8 @@ calc( 20px
 
   display: flex;
   flex-direction: column;
-  word-break: break-word;
+  --word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .mostpopularcardtext h3 {
