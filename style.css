@@ -4,7 +4,6 @@
   --color1: #0065FC;
   --color2: #DEEBFF;
   --color3: #F2F2F2; /* grey */
-
 }
 
 html {
@@ -24,25 +23,10 @@ body {
   margin: 0 calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2) / (1440 - 768) * 30, 30px) + (max((100% - 1440px) * (-1), (100% - 1440px)) + (100% - 1440px)) / 2 / 2);
   --max-width: 1340px;
 }
-
-
 /* 
------------------------------
-calc( 20px
-      + 
-      min(
-              max(
-                    100% - 768px,
-                    ((100% - 768px) * (-1) + 100% - 768px) / 2 
-                  )
-                  / (1440 - 768) * 30,
-              30px
-          )
-      +
-      (max( (100% - 1440px) * (-1), (100% - 1440px) ) + (100% - 1440px)) / 2 / 2)
-    )
+
 -------------------------------
-      (max( x * (-1), x ) + x) / 2 / 2)
+n0_0_x = max( x * (-1), x ) + x) / 2
 -------------------------------
 calc( 20px
       + 
@@ -104,8 +88,9 @@ calc( 20px
 }
 
 .header div a:nth-child(2):hover {
-  color: var(--color1);
-  border-top: 2px solid var(--color1);
+/*  color: var(--color1);
+  border-top: 2px solid var(--color1);*/
+/*cf media queries */
 }
 
 .header nav > a {
@@ -710,7 +695,12 @@ calc( 20px
   /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
 
 
-
+@media (hover: hover) and (min-width:769px) {
+  .header div a:nth-child(2):hover {
+    color: var(--color1);
+    border-top: 2px solid var(--color1);
+  }
+}
 
 
 @media screen and (max-width:768px) {
@@ -719,7 +709,7 @@ calc( 20px
   }
 
   .header nav > a {
-    line-height: 5.8125rem; /* new */
+    line-height: 5.8125rem; 
   }
 
   .header div {
@@ -752,7 +742,8 @@ calc( 20px
 
   .header div a:nth-child(2):hover {
     border-top: none;
-    border-bottom: 3px solid var(--color1);
+    color: black;
+    --border-bottom: 3px solid var(--color1); /*cf en bas de page*/
   }
 
   .main {
@@ -844,4 +835,14 @@ calc( 20px
   .activitiescardpic {
     height: 134px;
   }
+}
+
+
+@media (hover: hover) and (max-width:768px) {
+  .header div a:nth-child(2):hover {
+    border-top: none;
+    color: var(--color1);
+    border-bottom: 3px solid var(--color1);
+  }
+
 }
