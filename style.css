@@ -120,14 +120,10 @@ calc( 20px
 
 .main header form > div {
   flex-shrink: 0;
-
   display: flex;
-  
   justify-content: center;
   align-items: center;
-
   background-color: var(--color3);
-  
   border-radius: 1rem 0 0 1rem;
   height: 3.1875rem;
   width: 3.1875rem;
