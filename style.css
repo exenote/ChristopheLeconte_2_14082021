@@ -24,7 +24,6 @@ body {
   --max-width: 1340px;
 }
 /* 
-
 -------------------------------
 n0_0_x = max( x * (-1), x ) + x) / 2
 -------------------------------
@@ -138,7 +137,6 @@ calc( 20px
   font-size: 1.1rem;
 }
 
-
 .main header form input {
   flex-shrink: 1;
   width: 13.625rem;
@@ -176,7 +174,6 @@ calc( 20px
 
 .main .filter {
   margin-top: calc(1.9375rem - 0.8125rem / 2);
-  
   display: flex;
   flex-wrap: wrap;
 }
@@ -187,7 +184,6 @@ calc( 20px
   align-self: center;
 
   margin-right: 2rem;
-
   margin-top: calc(0.8125rem / 2);
   margin-bottom: calc(0.8125rem / 2);
 }
@@ -195,13 +191,12 @@ calc( 20px
 .main ul {
   display: flex;
   flex-wrap: wrap;
+  
   list-style: none;
-
   font-size: 1.1rem;
   font-weight: 700;
 
   padding-inline-start: 0;
-
 }
 
 .main li { 
@@ -213,7 +208,6 @@ calc( 20px
   position: relative;
   
   margin-right: 1.5rem;
-
   margin-top: calc(0.8125rem / 2);
   margin-bottom: calc(0.8125rem / 2);
 }
@@ -344,11 +338,8 @@ calc( 20px
   background-size: cover;
 
   width: calc((100% - 21px) * 127/(330 - 21));
-  --flex-grow: 1;
-
-
+  /*--flex-grow: 1;*/
   background-position: center;
-
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -366,7 +357,6 @@ calc( 20px
 }
 
 .mostpopularcardtext {
-
   min-height: 134px;
   width: calc((100% - 21px) * (330 - 21 - 127)/(330 - 21) - 16px);
   flex-grow: 1;
@@ -375,7 +365,7 @@ calc( 20px
 
   display: flex;
   flex-direction: column;
-  --word-break: break-word;
+  /*word-break: break-word;*/
   overflow-wrap: break-word;
 }
 
@@ -387,19 +377,13 @@ calc( 20px
   font-weight: 700;
   
   margin-top: 11px;
-
 }
 
 .mostpopularcardtext .price {
   flex-grow: 0;
   flex-shrink: 0;
-
   font-size: 14px;
-
   margin-top: 7px;
-
-
-
 }
 
 .mostpopularcardtext span {
@@ -409,9 +393,7 @@ calc( 20px
 .mostpopularcardtext .space {
   flex-grow: 1;
   flex-shrink: 0;
-
   min-height: 16px;
-  
 }
 
 .mostpopularcardtext .stars {
@@ -423,7 +405,6 @@ calc( 20px
 
 .mostpopularcardtext .star {
   margin-right: 2px;
-
 }
 
 .all {
@@ -451,13 +432,10 @@ calc( 20px
 
 .all .card {
   background-color: white;
- 
   min-width: calc(min(246px, 100%) - 10px); /*force le passage à la ligne suivante*/
-   
   width: calc(((100% - 2 * 31px) / 3) - 10px);  /*il ne pourra y avoir que 3 items maximum par row  */
   /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
   flex-grow: 1;
-
 
   border-radius: 20px;
 
@@ -521,8 +499,6 @@ calc( 20px
 
 .activities {
   margin-top: 52px;
-
-
 }
 
 .activities h2 {
@@ -539,14 +515,12 @@ calc( 20px
 }
 
 .activitiessection {
-
   display: flex;
   flex-wrap: wrap;
   width: 650px;
   gap: 40px;
   flex-grow: 1;
   flex-shrink: 1;
-
 }
 
 .activitiessectiongroup {
@@ -556,7 +530,6 @@ calc( 20px
   gap: 40px;
   flex-grow: 1;
   flex-shrink: 1;
-
 }
 
 .activitiescard {
@@ -568,20 +541,13 @@ calc( 20px
   cursor: pointer;
 }
 
-  
-
-
-
 .activitiescardpic {
   background-size: cover;
-  width: 100%;
-  
+  width: 100%; 
   background-position: center;
-
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-
 
 .activitiescardpic1 {
   background-image: url(images/activities/small/1.jpg);
@@ -615,17 +581,12 @@ calc( 20px
   --padding-bottom: 16px;
 }
 
-
-
-
 .footer {
   display: flex;
   flex-wrap: wrap;
   margin: 50px 0px 0px;
   padding: 0px calc(20px + min(max(100% - 768px, ((100% - 768px) * (-1) + 100% - 768px) / 2) / (1440 - 768) * 30, 30px) + (max((100% - 1440px) * (-1), (100% - 1440px)) + (100% - 1440px)) / 2 / 2) 50px;
- 
   background-color: var(--color3);
-
 }
 
 .footer h3 {
@@ -647,8 +608,6 @@ calc( 20px
   si 1000 / 3, 3 elements sur la ligne
   */
   flex-grow: 1;
-
-
 }
 
 .footersection ul {
@@ -666,12 +625,6 @@ calc( 20px
   text-decoration: none;
 }
 
-
- /*force le passage à la ligne suivante*/
-   
-  /*il ne pourra y avoir que 3 items maximum par row  */
-  /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
-
 @media (hover: hover) {
   .main ul li:hover {
     color: var(--color1);
@@ -680,7 +633,6 @@ calc( 20px
   }
 
   .mostpopularcard:hover {
-    
     transform: scale(1.02); 
   }
 
@@ -714,8 +666,7 @@ calc( 20px
     width: 100%;
     position: absolute;
     left: 0px;
-    top: 5.8125rem;
-    
+    top: 5.8125rem;    
     margin-top: -0.5625rem; /* répartition supérieure de line-height tronquée */ 
   }
 
@@ -770,8 +721,6 @@ calc( 20px
     margin-top: calc(2.3125rem - 0.8125rem / 2);
   }
 
-  /*ajuster le mini-width de "les plus populaires"*/
-
   .accommodations {
 /*  position: absolute;
     left: 0px;
@@ -825,7 +774,6 @@ calc( 20px
   .activitiessectiongroup {
     gap: 22px;
   }
-
 }
 
 @media screen and (max-width:689px) {
@@ -834,7 +782,6 @@ calc( 20px
     height: 134px;
   }
 }
-
 
 @media (hover: hover) and (max-width:768px) {
   .header div a:nth-child(2):hover {
