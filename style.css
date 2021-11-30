@@ -625,7 +625,8 @@ calc( 20px
   .main ul li:hover {
     color: var(--color1);
     background-color: var(--color2);
-    border-color: var(--color2);
+    --border-color: var(--color2);
+    border-color: transparent;
   }
 
   .mostpopularcard:hover {
