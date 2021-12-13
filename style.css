@@ -51,6 +51,7 @@ calc( 20px
 .logo {
   height: 2.8125rem;
   margin-right: auto;
+
   align-self: center;
 }
 
@@ -61,7 +62,7 @@ calc( 20px
 .header a {
   display: inline-block;
     /*
-  si inline : le padding et border n'entrent pas dans le cacul de la hauteur du conteneur, et le line-height n'est pas pris en compte pour le border. Donc il faudrait utilser le padding et le line-height, difficile d'ajuster le deux car font-size est appromixmatif.
+  si inline : le padding et border n'entrent pas dans le cacul de la hauteur du conteneur, et le line-height n'est pas pris en compte pour le border. Donc il faudrait utilser le padding et le line-height à la fois, difficile d'ajuster le deux car font-size est appromixmatif.
 
   si inline-block : le line-height est pris en compte comme limite exterieure imposée au conteneur et pour placer le border.
 
@@ -87,8 +88,6 @@ calc( 20px
 }
 
 .header div a:nth-child(2):hover {
-/*  color: var(--color1);
-  border-top: 2px solid var(--color1);*/
 /*cf media queries */
 }
 
@@ -264,7 +263,6 @@ calc( 20px
   margin-top: 2.3125rem;
   flex-direction: row-reverse;
   display: flex;
-  max-width: 1340px; /* 600 */
   flex-wrap: wrap;
   gap: 40px;
 }
