@@ -426,9 +426,10 @@ calc( 20px
 
 .all .card {
   background-color: white;
-  min-width: calc(min(246px, 100%) - 10px); /*force le passage à la ligne suivante*/
+  
   width: calc(((100% - 2 * 31px) / 3) - 10px);  /*il ne pourra y avoir que 3 items maximum par row  */
-  /*on peut pas mettre une valeur en px. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
+  /*on peut pas mettre une valeur en dure. Si trop grande, il pourrait n'y avoir que 2 items, alors que nous en voulons 3. Si trop petite, alors, trop d'items (>3) se placeraient sur la ligne */
+  min-width: calc(min(246px, 100%) - 10px); /*force le passage à la ligne suivante*/ 
   flex-grow: 1;
 
   border-radius: 20px;
@@ -596,7 +597,6 @@ calc( 20px
   --x: calc(1000px - 100%);
   --p_1_0: calc(min((max(var(--x) * (-1), var(--x)) + var(--x)) / 2 * 10, 1px));
   --n_1_0: calc(min((max(var(--x) * (-1), var(--x)) - var(--x)) / 2 * 10, 1px));
-  ----0_1_0: calc(min(max(var(--x) * (-1), var(--x)) * 10, 1px) * (-1) + 1px);
   --0_1_0: calc(min(max(var(--x) * (-1), var(--x)) * 10, 1px) * (-1) + 1px);
   width: calc(var(--p_1_0) * 1000 + var(--n_1_0) * 1000 / 3 + var(--0_1_0) * 1000 / 3);
   /* si 1000, shrink ajustera le width. 1 item par ligne.
